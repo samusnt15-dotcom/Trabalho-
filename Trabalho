@@ -1,0 +1,17 @@
+var tokens = input.split(/\s+/) .filter(function (t) { return t !== ''; }).map(Number);
+var pos = 0;
+var saida = [];
+
+while (pos < tokens.length) {
+  var L = tokens[pos++];
+  var maior = 0;
+  for (var i = 0; i < L; i++) {
+    var v = tokens[pos++];
+    if (v > maior) maior = v;
+  }
+  if (maior < 10) saida.push(1);
+  else if (maior < 20) saida.push(2);
+  else saida.push(3);
+}
+
+console.log(saida.join('\n'));
